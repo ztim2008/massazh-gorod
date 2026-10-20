@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Массажный кабинет «Аркадия» — массаж в городе | Прототип</title>
+<meta name="description" content="Прототип сайта массажа: мастера, услуги и цены, онлайн-запись. Все данные примерные.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div>
+<a class="skip" href="#main">К содержанию</a>
+<header class="nav">
+  <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true">❦</span> Аркадия</a>
+  <button class="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  <nav id="menu" class="menu" aria-label="Основная навигация">
+    <a href="#masters">Мастера</a><a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+    <a class="btn btn-brass btn-sm" href="#booking" data-book>Записаться</a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero-frame corners">
+    <p class="label">Том I · Ваш город · с 2014 года</p>
+    <h1>Искусство массажа,<br><em>проверенное временем</em></h1>
+    <p class="lead dropcap">Добро пожаловать в «Аркадию» — тихое место, где опытные мастера возвращают телу лёгкость, а мыслям покой. Выберите своего специалиста, удобный день и час — и мы будем ждать вас.</p>
+    <div class="hero-cta">
+      <a class="btn btn-brass" href="#booking" data-book>Записаться на приём</a>
+      <a class="btn btn-ghost" href="tel:+79000000000">+7 (900) 000-00-00</a>
+    </div>
+    <dl class="stats">
+      <div><dt>XII</dt><dd>лет практики</dd></div>
+      <div><dt>VI</dt><dd>мастеров</dd></div>
+      <div><dt>4,9</dt><dd>средний рейтинг</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span>✶</span></div>
+
+<section class="section" id="masters">
+  <p class="label">Том II</p>
+  <h2>Наши мастера</h2>
+  <p class="sub">Выберите специалиста и запишитесь напрямую — по телефону или онлайн.</p>
+  <div class="grid" id="masterGrid"></div>
+</section>
+
+<div class="divider" aria-hidden="true"><span>❧</span></div>
+
+<section class="section" id="services">
+  <p class="label">Том III</p>
+  <h2>Услуги и цены</h2>
+  <p class="sub">Стоимость указана за один сеанс.</p>
+  <ul class="price-list" id="priceList"></ul>
+</section>
+
+<div class="divider" aria-hidden="true"><span>✶</span></div>
+
+<section class="section" id="booking">
+  <p class="label">Том IV</p>
+  <h2>Запись на приём</h2>
+  <p class="sub">Оставьте заявку — администратор перезвонит в течение 15 минут для подтверждения.</p>
+  <form class="book corners" id="bookForm" novalidate>
+    <div class="row">
+      <label>Услуга<select name="service" id="fService" required></select></label>
+      <label>Мастер<select name="master" id="fMaster" required></select></label>
+    </div>
+    <div class="row">
+      <label>Дата<input type="date" name="date" id="fDate" required></label>
+      <fieldset class="slots"><legend>Время</legend><div id="slotBox"></div></fieldset>
+    </div>
+    <div class="row">
+      <label>Ваше имя<input type="text" name="name" autocomplete="name" required placeholder="Анна"></label>
+      <label>Телефон<input type="tel" name="phone" autocomplete="tel" required placeholder="+7 (___) ___-__-__"></label>
+    </div>
+    <p class="err" id="formErr" role="alert"></p>
+    <button class="btn btn-brass btn-wide" type="submit">Отправить заявку</button>
+    <p class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+  </form>
+  <div class="done corners" id="bookDone" hidden tabindex="-1">
+    <div class="seal seal-lg" aria-hidden="true">✓</div>
+    <h3>Заявка принята</h3>
+    <p id="doneText"></p>
+    <button class="btn btn-ghost" type="button" id="again">Новая запись</button>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span>❧</span></div>
+
+<section class="section" id="reviews">
+  <p class="label">Том V</p>
+  <h2>Отзывы гостей</h2>
+  <div class="reviews">
+    <blockquote class="card"><p>«После трёх сеансов у Елены спина перестала болеть впервые за год. Атмосфера — как в старой библиотеке, очень спокойно.»</p><footer>— Марина, <span>октябрь</span></footer></blockquote>
+    <blockquote class="card"><p>«Спортивный массаж у Дмитрия — то, что нужно после тренировок. Записался онлайн за минуту.»</p><footer>— Артём, <span>сентябрь</span></footer></blockquote>
+    <blockquote class="card"><p>«Подарила маме сертификат на расслабляющий массаж. Она в восторге, теперь ходит постоянно.»</p><footer>— Ольга, <span>август</span></footer></blockquote>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span>✶</span></div>
+
+<section class="section" id="contacts">
+  <p class="label">Том VI</p>
+  <h2>Контакты</h2>
+  <div class="contacts">
+    <div class="card">
+      <h3>Как нас найти</h3>
+      <p>Ваш город, ул. Примерная, д. 1</p>
+      <p>Ежедневно с 9:00 до 21:00</p>
+      <p><a class="phone" href="tel:+79000000000">+7 (900) 000-00-00</a> — администратор</p>
+      <p><a class="phone" href="tel:+79000000099">+7 (900) 000-00-99</a> — запись и сертификаты</p>
+      <div class="hero-cta"><a class="btn btn-brass" href="#booking" data-book>Записаться</a><a class="btn btn-ghost" href="https://t.me/" rel="noopener">Telegram</a></div>
+    </div>
+    <div class="map card" role="img" aria-label="Место для карты"><span>Здесь будет карта<br><small>(Яндекс / Google Карты)</small></span></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="divider" aria-hidden="true"><span>❦</span></div>
+  <p class="logo">Аркадия</p>
+  <p>© MMXXVI · Ваш город · Прототип: имена, телефоны и цены — примерные данные.</p>
+  <p class="credits">Фото: Unsplash</p>
+</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-box corners">
+    <button class="close" aria-label="Закрыть">×</button>
+    <p class="label">Запись</p>
+    <h3 id="mTitle">Записаться к мастеру</h3>
+    <p id="mText"></p>
+    <div class="hero-cta"><a class="btn btn-brass" id="mGo" href="#booking">Выбрать время</a><a class="btn btn-ghost" id="mTel" href="#">Позвонить</a></div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
